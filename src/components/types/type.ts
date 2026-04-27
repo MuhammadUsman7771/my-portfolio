@@ -1,62 +1,67 @@
 export interface Skill {
-    name: string;
-    level: number;
-    icon: string;
-    category: 'frontend' | 'backend';
-    color: string;
-    description: string;
+  id: number;
+  name: string;
+  level: number;
+  icon: string;
+  category: 'frontend' | 'backend';
+  color: string;
+  description: string;
 }
 
 export type ThemeType = 'light' | 'dark';
+export type Statues = 'idle' | 'success' | 'error';
+export type ScrollToElement = "#projects" | "#contact" | "#about";
+export type VariantType = 'primary' | 'secondary' | 'outline' | 'ghost';
+export type IconSize = 'sm' | 'md' | 'lg';
 
 export interface ThemeContextType {
-    theme: ThemeType;
-    setTheme: (theme: ThemeType) => void;
+  theme: ThemeType;
+  setTheme: (theme: ThemeType) => void;
 }
 
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
-    size?: 'sm' | 'md' | 'lg';
-    icon?: React.ReactNode;
-    iconPosition?: 'left' | 'right';
-    fullWidth?: boolean;
-    children: React.ReactNode;
+  variant?: VariantType;
+  size?: IconSize;
+  icon?: React.ReactNode;
+  iconPosition?: 'left' | 'right';
+  fullWidth?: boolean;
+  children: React.ReactNode;
+  onClick?: () => void;
 }
 
 
 export interface FormState {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 }
 
 export interface FormErrors {
-    name?: string;
-    email?: string;
-    subject?: string;
-    message?: string;
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
 }
 
 export interface Project {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    tags: string[];
-    liveUrl: string;
-    githubUrl: string;
-    featured?: boolean;
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  liveUrl: string;
 }
 
 export interface ExperienceData {
-    company: string;
-    role: string;
-    duration: string;
-    location: string;
-    description: string[];
-    technologies: string[];
-    logo: string;
+  id: number;
+  company: string;
+  role: string;
+  duration: string;
+  location: string;
+  description: string[];
+  technologies: string[];
+  logo: string;
 }
 

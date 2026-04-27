@@ -1,8 +1,8 @@
-export const routes = {
-    home: '#home',
-    about: '#about',
-    projects: '#projects',
-    skills: '#skills',
-    experience: '#experience',
-    contact: '#contact',
+export const ROUTES = {
+    HOME: '#home',
+    ABOUT: '#about',
+    PROJECTS: '#projects',
+    SKILLS: '#skills',
+    EXPERIENCE: '#experience',
+    CONTACT: '#contact',
 }

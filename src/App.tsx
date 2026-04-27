@@ -1,27 +1,27 @@
-import { useEffect } from 'react';
-import { ThemeProvider } from './context/ThemeContext';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { useEffect } from "react";
+import About from "./components/templates/pages/About";
+import Contact from "./components/templates/pages/Contact";
+import Experience from "./components/templates/pages/Experience";
+import Footer from "./components/templates/Nav/Footer";
+import Header from "./components/templates/Nav/Header";
+import Hero from "./components/templates/pages/Hero";
+import Projects from "./components/templates/pages/Projects";
+import Skills from "./components/templates/pages/Skills";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   // Set page title and description dynamically
   useEffect(() => {
-    // Set page title
-    document.title = 'Portfolio | Usman Developer';
+    document.title = "Muhammad Usman Software Developer Portfolio";
 
-    // Find the meta description tag and update it
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Personal portfolio of Usman Developer - Developer & Designer');
+      metaDescription.setAttribute(
+        "content",
+        "Muhammad Usman - Software Developer | MERN Stack Developer & Next.js Expert. Explore my portfolio showcasing web development projects, skills, and experience. Contact me for collaborations or inquiries.",
+      );
     }
   }, []);
-  
 
   return (
     <ThemeProvider>

@@ -1,28 +1,39 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowDown, ChevronRight } from 'lucide-react';
-import Button from './Button';
-import TypewriterEffect from 'typewriter-effect';
-import { IMAGES } from '../../public/index';
-import { dynamicTexts } from './constant';
+import { motion } from "framer-motion";
+import { ArrowDown, ChevronRight } from "lucide-react";
+import { memo, useCallback, useMemo } from "react";
+import TypewriterEffect from "typewriter-effect";
+import { IMAGES } from "../../../../public/index";
+import { useSmoothScroll } from "../../../hooks/useScroll";
+import { dynamicTexts } from "../../constant";
+import { ScrollToElement } from "../../types/type";
+import Button from "../Button/Button";
 
-const Hero: React.FC = () => {
-  const scrollToProjects = () => {
-    const projectsSection = document.querySelector('#projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+const Hero = () => {
+  const scrollToElement = useSmoothScroll();
 
-  const scrollToContact = () => {
-    const contactSection = document.querySelector('#contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const handleScrollTo = useCallback(
+    (target: ScrollToElement) => {
+      scrollToElement(target);
+    },
+    [scrollToElement],
+  );
+
+  const typewriterOptions = useMemo(
+    () => ({
+      strings: dynamicTexts,
+      autoStart: true,
+      loop: true,
+      deleteSpeed: 50,
+      cursor: "|",
+    }),
+    [],
+  );
 
   return (
-    <section id="home" className="min-h-screen pt-24 flex flex-col justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <section
+      id="home"
+      className="min-h-screen pt-16 flex flex-col justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col-reverse lg:flex-row items-center">
         <div className="w-full lg:w-1/2 mb-12 lg:mb-0">
           <motion.h2
@@ -38,19 +49,11 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6"
           >
-            I'm a {" "}
+            I'm a{" "}
             <span className="text-primary-600 dark:text-primary-400">
-              <TypewriterEffect
-                options={{
-                  strings: dynamicTexts,
-                  autoStart: true,
-                  loop: true,
-                  deleteSpeed: 50,
-                  cursor: '|',
-                }}
-              />
+              <TypewriterEffect options={typewriterOptions} />
             </span>
           </motion.h1>
 
@@ -60,7 +63,8 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg"
           >
-            Building beautiful, functional digital experiences with a focus on clean design and intuitive user interfaces.
+            Building beautiful, functional digital experiences with a focus on
+            clean design and intuitive user interfaces.
           </motion.p>
 
           <motion.div
@@ -70,7 +74,7 @@ const Hero: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Button
-              onClick={scrollToProjects}
+              onClick={() => handleScrollTo("#projects")}
               icon={<ChevronRight size={18} />}
               iconPosition="right"
               size="lg"
@@ -78,7 +82,7 @@ const Hero: React.FC = () => {
               View Projects
             </Button>
             <Button
-              onClick={scrollToContact}
+              onClick={() => handleScrollTo("#contact")}
               variant="outline"
               size="lg"
             >
@@ -109,12 +113,7 @@ const Hero: React.FC = () => {
         animate={{ opacity: 1, y: [0, 10, 0] }}
         transition={{ duration: 1.5, delay: 1, repeat: Infinity }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
-        onClick={() => {
-          const aboutSection = document.querySelector('#about');
-          if (aboutSection) {
-            aboutSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        }}
+        onClick={() => handleScrollTo("#about")}
       >
         <ArrowDown className="text-gray-500 dark:text-gray-400" />
       </motion.div>
@@ -122,4 +121,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero;
+export default memo(Hero);

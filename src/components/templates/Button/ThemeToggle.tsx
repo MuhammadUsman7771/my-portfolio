@@ -1,28 +1,30 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Moon, Sun } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { motion } from "framer-motion";
+import { Moon, Sun } from "lucide-react";
+import { memo, useCallback } from "react";
+import { useTheme } from "../../../context/ThemeContext";
 
-const ThemeToggle: React.FC = () => {
+const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
+  const toggleTheme = useCallback(() => {
+    setTheme(theme === "light" ? "dark" : "light");
+  }, [theme, setTheme]);
 
   return (
     <motion.button
       whileTap={{ scale: 0.95 }}
       onClick={toggleTheme}
       className="relative p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500"
-      aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
+      aria-label={
+        theme === "light" ? "Switch to dark theme" : "Switch to light theme"
+      }
     >
-      <AnimatedIcon isDark={theme === 'dark'} />
+      <AnimatedIcon isDark={theme === "dark"} />
     </motion.button>
   );
 };
 
-const AnimatedIcon: React.FC<{ isDark: boolean }> = ({ isDark }) => {
+const AnimatedIcon = ({ isDark }: { isDark: boolean }) => {
   return (
     <div className="relative w-5 h-5">
       <motion.div
@@ -45,4 +47,4 @@ const AnimatedIcon: React.FC<{ isDark: boolean }> = ({ isDark }) => {
   );
 };
 
-export default ThemeToggle;
+export default memo(ThemeToggle);

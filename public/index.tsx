@@ -15,6 +15,14 @@ export const IMAGES = {
     EXPRESS_JS_IMAGE: "/icons/express3.png",
     MONGODB_IMAGE: "/icons/mongo.png",
     FIREBASE_IMAGE: "/icons/firebase.png",
-    REST_API_IMAGE: "/icons/restapi.png",
+    APPWRITE_IMAGE: "/icons/appwrite.png",
     JAVASCRIPT_IMAGE: "/icons/javascript.png",
+
+    // projects images
+    PROJECT1_IMAGE: "/projects/project1.png",
+    PROJECT2_IMAGE: "/projects/project2.png",
+    PROJECT3_IMAGE: "/projects/project3.png",
+    PROJECT4_IMAGE: "/projects/project4.png",
+    PROJECT5_IMAGE: "/projects/project5.png",
+    PROJECT6_IMAGE: "/projects/project6.png",
 }
