@@ -106,20 +106,23 @@ const About = () => {
           className="text-center mt-12"
         >
           <div
-            className={`inline-flex items-center space-x-2 px-6 py-3 rounded-full ${theme === "dark"
-              ? "bg-gray-800/50 border border-gray-700/50"
-              : "bg-white/80 border border-gray-200/50"
-              } shadow-lg`}
+            className={`inline-flex items-center space-x-2 px-6 py-3 rounded-full ${
+              theme === "dark"
+                ? "bg-gray-800/50 border border-gray-700/50"
+                : "bg-white/80 border border-gray-200/50"
+            } shadow-lg`}
           >
             <span
-              className={`text-sm font-medium ${theme === "dark" ? "text-gray-300" : "text-gray-600"
-                }`}
+              className={`text-sm font-medium ${
+                theme === "dark" ? "text-gray-300" : "text-gray-600"
+              }`}
             >
               Always learning and growing
             </span>
             <div
-              className={`w-2 h-2 rounded-full animate-pulse ${theme === "dark" ? "bg-primary-400" : "bg-primary-500"
-                }`}
+              className={`w-2 h-2 rounded-full animate-pulse ${
+                theme === "dark" ? "bg-primary-400" : "bg-primary-500"
+              }`}
             />
           </div>
         </motion.div>

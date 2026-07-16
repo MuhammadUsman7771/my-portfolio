@@ -38,12 +38,12 @@ npm run dev
 ## Contact
 
 - Email: ranausman5939@gmail.com
-- Phone: +92 (321) 2494291
+- Phone: +92 (328) 1505644
 - Location: Faisalabad, Pakistan
 
 ## Social Links
 
-- [GitHub](https://github.com/MuhammadUsmanRana)
+- [GitHub](https://github.com/MuhammadUsman7771)
 - [LinkedIn](https://www.linkedin.com/in/muhammad-usman-280321268/)
 - [X (Twitter)](https://x.com/Muhamma69588482)
-- [WhatsApp](https://wa.me/923212494291) 
+- [WhatsApp](https://wa.me/923281505644) 

@@ -126,7 +126,7 @@ export const socialsLinks = [
     {
         id: 4,
         name: "whatsapp",
-        link: "https://wa.me/923212494291",
+        link: "https://wa.me/923281505644",
         icon: FaWhatsapp,
     },
 ];
@@ -221,8 +221,8 @@ export const contactInfo = [
     {
         id: 2,
         label: "Phone",
-        value: "+92 (321) 2494291",
-        href: "tel:+923212494291",
+        value: "+92 (328) 1505644",
+        href: "tel:+923281505644",
         icon: MdPhone,
     },
     {

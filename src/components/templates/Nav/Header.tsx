@@ -4,6 +4,7 @@ import { memo, useCallback, useState } from "react";
 import { useScrollPosition, useSmoothScroll } from "../../../hooks/useScroll";
 import { navItems } from "../../constant";
 import ThemeToggle from "../Button/ThemeToggle";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -34,11 +35,16 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <motion.a
             href="#home"
-            className="text-2xl font-bold text-gray-900 dark:text-white"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            aria-label="Muhammad Usman — Home"
+            className="inline-flex items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            onClick={(event) => {
+              event.preventDefault();
+              handleNavClick("#home");
+            }}
           >
-            MU<span className="text-primary-600 dark:text-primary-400">.</span>
+            <Logo />
           </motion.a>
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
