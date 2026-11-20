@@ -1,0 +1,230 @@
+.section {
+  border-top: 1px solid var(--line);
+}
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 46px;
+}
+.heading h2 {
+  font-size: clamp(2.4rem, 4vw, 3.7rem);
+  margin: 18px 0 0;
+  max-width: 680px;
+  line-height: 1.12;
+}
+.heading > p {
+  max-width: 350px;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 3px;
+}
+.list {
+  border: 1px solid #36363f;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #17171c;
+}
+.role {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.6fr);
+  gap: 50px;
+  padding: 38px 40px;
+  border-bottom: 1px solid #36363f;
+}
+.role:last-child {
+  border-bottom: 0;
+}
+.companyName {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #ececef;
+  font-weight: 550;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+.companyName img {
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.date {
+  font-size: 0.9rem;
+  margin: 22px 0 6px;
+  color: #c1c1cb;
+}
+.location {
+  font-size: 0.85rem;
+  color: #9898a5;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+.title h3 {
+  font-size: 1.6rem;
+  font-weight: 550;
+  margin: 0;
+  letter-spacing: -0.035em;
+}
+.current {
+  border: 1px solid #554867;
+  background: #282232;
+  color: #d1bff1;
+  border-radius: 100px;
+  padding: 4px 11px;
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+.summary {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #b5b5c2;
+  max-width: 740px;
+}
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 17px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tools li {
+  color: #d1c6e8;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.tools li:not(:last-child)::after {
+  content: "·";
+  color: #777080;
+  margin-left: 17px;
+}
+.details {
+  margin-top: 24px;
+  border-top: 1px solid #303039;
+  padding-top: 15px;
+}
+.details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  list-style: none;
+  color: #cacad5;
+  font-size: 0.9rem;
+  min-height: 44px;
+}
+.details summary::-webkit-details-marker {
+  display: none;
+}
+.details summary span {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.details[open] summary span {
+  transform: rotate(45deg);
+}
+.details summary:hover {
+  color: var(--accent);
+}
+.details summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+.details ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 18px 0 0;
+  color: #b5b5c2;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+.details li + li {
+  margin-top: 7px;
+}
+@media (max-width: 1000px) {
+  .heading {
+    display: block;
+  }
+  .heading > p {
+    margin-top: 22px;
+    max-width: none;
+  }
+  .role {
+    gap: 30px;
+    padding: 30px;
+    grid-template-columns: minmax(200px, 0.8fr) minmax(0, 1.5fr);
+  }
+  .title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+@media (max-width: 650px) {
+  .heading {
+    margin-bottom: 30px;
+  }
+  .heading h2 {
+    font-size: clamp(2rem, 8.5vw, 2.5rem);
+  }
+  .heading > p {
+    font-size: 0.95rem;
+  }
+  .role {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 25px 22px;
+  }
+  .company {
+    border-bottom: 1px solid #303039;
+    padding-bottom: 20px;
+  }
+  .companyName {
+    font-size: 1.1rem;
+  }
+  .date {
+    margin-top: 16px;
+    display: inline-block;
+    margin-right: 14px;
+  }
+  .location {
+    display: inline-block;
+  }
+  .title {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .title h3 {
+    font-size: 1.4rem;
+  }
+  .summary {
+    font-size: 0.95rem;
+  }
+  .tools {
+    gap: 8px 12px;
+  }
+  .tools li:not(:last-child)::after {
+    margin-left: 12px;
+  }
+  .list {
+    border-radius: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .details summary span {
+    transition: none;
+  }
+}
