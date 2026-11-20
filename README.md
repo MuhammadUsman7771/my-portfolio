@@ -6,7 +6,7 @@ A graphite, silver, and muted violet portfolio built with Next.js App Router, Re
 
 Requires Node.js 20.9 or later.
 
-```sh
+```shsd
 npm install
 npm run dev
 ```
